@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.android.extensions'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.tekinarslan.app"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        dataBinding true
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+
+    implementation Dependencies.kotlinDependencies
+    implementation Libraries.hilt
+    implementation Libraries.hiltViewModel
+    implementation Dependencies.googleDependencies
+
+    implementation Dependencies.androidxDependencies
+    kapt Libraries.dataBinding
+
+    implementation Dependencies.androidLifecycle
+    kapt Dependencies.androidLifecycleCompiler
+
+    implementation Dependencies.okhttpDependencies
+
+    implementation Dependencies.retrofitDependencies
+
+    implementation Dependencies.navigationDependencies
+
+    implementation Dependencies.storageDependencies
+
+    implementation Dependencies.loggerDependencies
+
+    implementation Dependencies.glideDependencies
+    kapt Libraries.glideCompiler
+    kapt Libraries.dataBinding
+    kapt Libraries.hiltCompiler
+    kapt Libraries.hiltViewModelCompiler
+
+    testImplementation Dependencies.unitTestDependencies
+    androidTestImplementation(Libraries.androidxJunit)
+    androidTestImplementation(Libraries.mockitoAndroid)
+
+
+}

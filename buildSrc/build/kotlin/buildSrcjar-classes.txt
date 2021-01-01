@@ -1,0 +1,1 @@
+/Users/tekinarslan/StudioProjects/HiltNAvigationGraphMVVM/buildSrc/build/classes/kotlin/main/Dependencies.class:/Users/tekinarslan/StudioProjects/HiltNAvigationGraphMVVM/buildSrc/build/classes/kotlin/main/Libraries.class:/Users/tekinarslan/StudioProjects/HiltNAvigationGraphMVVM/buildSrc/build/classes/kotlin/main/Versions.class
